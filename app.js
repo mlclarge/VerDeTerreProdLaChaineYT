@@ -569,7 +569,7 @@ function addFilterTag(label, value, onRemove) {
     tag.className = 'filter-tag';
     tag.innerHTML = `
         <span>${label}: ${value}</span>
-        <button onclick="event.preventDefault()">â</button>
+        <button onclick="event.preventDefault()">×</button>
     `;
     tag.querySelector('button').addEventListener('click', onRemove);
     elements.activeFilters.appendChild(tag);
