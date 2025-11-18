@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver de Terre Production - Catalogue Vidéos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <h1>Ver de Terre Production</h1>
+                <p class="subtitle">Catalogue de vidéos agroécologiques</p>
+            </div>
+            <div class="stats">
+                <span id="videoCount" class="badge">969 vidéos</span>
+            </div>
+        </header>
+
+        <!-- Message d'accueil -->
+        <div class="welcome-message">
+            <h2>Accélérez votre recherche de vidéos</h2>
+            <p>Plus de 1000 vidéos agroécologiques sont accessibles ici. Utilisez les filtres ci-dessous pour trouver rapidement le contenu qui vous intéresse. <strong>Bonne recherche !</strong></p>
+        </div>
+
+        <!-- Search & Filters -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Rechercher par titre, intervenant, description..."
+                    autocomplete="off"
+                >
+                <button id="clearSearch" class="clear-btn" style="display: none;"></button>
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="categoryFilter">Catégorie</label>
+                    <select id="categoryFilter">
+                        <option value="">Toutes les catégories</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="intervenantFilter">Intervenant</label>
+                    <select id="intervenantFilter">
+                        <option value="">Tous les intervenants</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="dateFilter">Date</label>
+                    <select id="dateFilter">
+                        <option value="">Toutes les dates</option>
+                        <option value="week">Cette semaine</option>
+                        <option value="month">Ce mois-ci</option>
+                        <option value="3months">3 derniers mois</option>
+                        <option value="6months">6 derniers mois</option>
+                        <option value="year">Cette année</option>
+                        <option value="last-year">Année dernière</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sortFilter">Trier par</label>
+                    <select id="sortFilter">
+                        <option value="date-desc">Plus récentes</option>
+                        <option value="date-asc">Plus anciennes</option>
+                        <option value="views-desc">Vues (+ -)</option>
+                        <option value="views-asc">Vues (- +)</option>
+                        <option value="title-asc">Titre (A Z)</option>
+                        <option value="title-desc">Titre (Z A)</option>
+                        <option value="duration-desc">Durée (+ -)</option>
+                        <option value="duration-asc">Durée (- +)</option>
+                    </select>
+                </div>
+
+                <button id="resetFilters" class="reset-btn">Réinitialiser</button>
+                
+                <button id="searchVideosBtn" class="search-videos-btn">Trouver les vidéos</button>
+            </div>
+
+            <div class="active-filters" id="activeFilters"></div>
+        </div>
+
+        <!-- Tags Cloud Section -->
+        <div class="tags-cloud-section" id="tagsCloudSection" style="display: none;">
+            <div class="tags-cloud-header">
+                <h3>Tags connexes</h3>
+                <button id="hideTagsCloud" class="hide-tags-btn" title="Masquer"></button>
+            </div>
+            <div class="tags-cloud" id="dynamicTagsCloud"></div>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Chargement des vidéos...</p>
+        </div>
+
+        <!-- Results -->
+        <div class="results-header" id="resultsHeader" style="display: none;">
+            <span id="resultsCount">0 résultats</span>
+            <div class="view-toggle">
+                <button id="gridView" class="view-btn active" title="Vue grille">â</button>
+                <button id="listView" class="view-btn" title="Vue liste">â</button>
+            </div>
+        </div>
+
+        <!-- Video Grid -->
+        <div id="videoGrid" class="video-grid"></div>
+
+        <!-- No Results -->
+        <div id="noResults" class="no-results" style="display: none;">
+            <div class="no-results-icon"></div>
+            <h3>Aucune vidéo trouvée</h3>
+            <p>Essayez de modifier vos critères de recherche ou filtres</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>2024 Ver de Terre Production - Base de données vidéo agroécologique</p>
+            <p>
+                <a href="https://www.verdeterreprod.fr" target="_blank">Site web</a> | 
+                <a href="https://www.youtube.com/@VerredeTerreProduction" target="_blank">YouTube</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
